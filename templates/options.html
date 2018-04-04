@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 {% block info %}
 <form action='/username' method='post'>
-    <tr>
-        <td>
+    <table>
+        <tr>
         <label for="username">
             Username<input type='text' value="" name='username' />
-        </label></td><br>
-        <td>
+        </label><br>
+        </tr>
+        <tr>
         <label for="password">
             Password<input type="password" name="password" />
         </label>
-        </td>
-    </tr>
+        </tr>
+    </table>
 </form>
 {% endblock %}
