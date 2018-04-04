@@ -21,7 +21,7 @@ def index():
     error = request.args.get('error')
     if error:
         error_esc = cgi.escape(error, quote=True)
-        error_element = '<p class='error'>' + error_esc + '</p>'
+        error_element = '<p class="error">' + error_esc + '</p>'
     else:
         error_element = ''
     return render_template('edit.html')
