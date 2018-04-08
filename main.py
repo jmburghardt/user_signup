@@ -12,7 +12,7 @@ def get_username():
         error = "That's not a valid username."
         return redirect('/?error=' + cgi.escape(error, quote=True))
 
-    if len(username) < 3 or len(username) < 20:
+    if len(username) < 3 or len(username) > 20:
         error = "Your username must be between 3 and 20 characters."
         return redirect('/?error=' + cgi.escape(error, quote=True))
 
@@ -28,11 +28,6 @@ def index():
     
     
      
-
-
-
-
-
 
 
 

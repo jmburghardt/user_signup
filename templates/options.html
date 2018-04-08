@@ -2,16 +2,36 @@
 {% block info %}
 <form action='/username' method='post'>
     <table>
-        <tr>
-        <label for="username">
-            Username<input type='text' value="" name='username' />
-        </label><br>
-        </tr>
-        <tr>
-        <label for="password">
-            Password<input type="password" name="password" />
-        </label>
-        </tr>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="username">
+                    Username<input type='text' value="" name='username' />
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password">
+                    Password<input type="password" name="password" />
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Verify Password<input type="password" name="verify" />
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Email (optional)<input type="email" name="email" />
+                    </label>
+                </td>
+            </tr>
+        </tbody>
     </table>
 </form>
 {% endblock %}
