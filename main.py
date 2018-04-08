@@ -11,8 +11,11 @@ def signup():
     password = get_password()
     verify = validate_password()
     email = get_email()
-    return render_template('options.html', value=username[0], error=username[1], 
-        valuepass=password[0], errorpass=password[1], errorverify=verify, erroremail=email)
+    if username[1] == '' and password[1] == '' and email == '' and verify == '':
+        return render_template('Welcome.html', username=username[0])
+    else:
+        return render_template('options.html', value=username[0], error=username[1], 
+            valuepass=password[0], errorpass=password[1], errorverify=verify, erroremail=email)
 
 def get_username():
     username = request.form['username']
@@ -40,15 +43,19 @@ def get_password():
 def validate_password():
     verify = request.form['verify']
     password = request.form['password']
-    if verify != password:
+    if verify != password or verify == '':
         error = "Passwords don't match"
         return (error)
+    else:
+        return ''
 
 def get_email():
     email = request.form['email']
     error = "That's not a valid email"
-    if "@" in email and "." in email:
-        return ""
+    if len(email) < 3 or len(email) > 20:
+        return error
+    if "@" in email and "." in email or email == '':
+        return ''
     else:
         return error
 
