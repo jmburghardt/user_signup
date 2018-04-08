@@ -1,34 +1,52 @@
 {% extends "base.html" %}
+
 {% block info %}
-<form action='/username' method='post'>
+<form action='/signup' method='post'>
     <table>
         <tbody>
             <tr>
                 <td>
-                    <label for="username">
-                    Username<input type='text' value="" name='username' />
-                    </label>
+                    <label for="username">Username</label>
+                </td>
+                <td>
+                    <input type='text' value='{{value}}' name='username' />
+                    {% if error %}
+                    <span class="error">{{error}}</span>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+               <td>
+                    <label for="password">Password</label>
+                </td>
+                <td>
+                    <input type="password" value="" name="password" />
+                    {% if error %}
+                    <span class="error"></span>
+                    {% endif %}
+                </td>
+            </tr>
+<!--            <tr>
+                <td>
+                    <label for="verify">Verify Password</label>
+                </td>
+                <td>
+                    <input type="password" value="" name="verify" />
+                    <span class="error"></span>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="password">
-                    Password<input type="password" name="password" />
-                    </label>
+                    <label for="email">Email (optional)</label>
                 </td>
-            </tr>
+                <td>
+                    <input type="email" name="email" />
+                    <span class="error"></span>
+                </td>
+            </tr>-->
             <tr>
                 <td>
-                    <label>
-                        Verify Password<input type="password" name="verify" />
-                    </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>
-                        Email (optional)<input type="email" name="email" />
-                    </label>
+                    <input type='submit' value="Submit Query" />
                 </td>
             </tr>
         </tbody>
