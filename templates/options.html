@@ -20,19 +20,21 @@
                     <label for="password">Password</label>
                 </td>
                 <td>
-                    <input type="password" value="" name="password" />
-                    {% if error %}
-                    <span class="error"></span>
+                    <input type="password" valuepass="" name="password" />
+                    {% if errorpass %}
+                    <span class="error">{{errorpass}}</span>
                     {% endif %}
                 </td>
             </tr>
-<!--            <tr>
+            <tr>
                 <td>
                     <label for="verify">Verify Password</label>
                 </td>
                 <td>
-                    <input type="password" value="" name="verify" />
-                    <span class="error"></span>
+                    <input type="password" valueverify="" name="verify" />
+                    {% if errorverify %}
+                    <span class="error">{{errorverify}}</span>
+                    {% endif %}
                 </td>
             </tr>
             <tr>
@@ -40,10 +42,12 @@
                     <label for="email">Email (optional)</label>
                 </td>
                 <td>
-                    <input type="email" name="email" />
-                    <span class="error"></span>
+                    <input name="email" />
+                    {% if erroremail %}
+                    <span class="error">{{erroremail}}</span>
+                    {% endif %}
                 </td>
-            </tr>-->
+            </tr>
             <tr>
                 <td>
                     <input type='submit' value="Submit Query" />
